@@ -1,0 +1,25 @@
+﻿@using KisiselWebProjesi.Models.Classes
+@model List<AnaSayfa>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Ana Sayfa</h2>
+<table class="table table-bordered mt-3">
+    <tr>
+        <th>Id</th>
+        <th>İsim</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.İsim</td>
+            <td><a href="/Admin/AnaSayfaGetir/@item.id" class="btn btn-primary">Güncelle</a></td>
+        </tr>
+    }
+
+
+
+</table>
